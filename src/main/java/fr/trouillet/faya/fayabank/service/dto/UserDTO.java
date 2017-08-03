@@ -14,10 +14,8 @@
 package fr.trouillet.faya.fayabank.service.dto;
 
 import fr.trouillet.faya.fayabank.config.Constants;
-
 import fr.trouillet.faya.fayabank.domain.Authority;
 import fr.trouillet.faya.fayabank.domain.User;
-
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 

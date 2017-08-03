@@ -13,16 +13,15 @@
 
 package fr.trouillet.faya.fayabank.service;
 
+import fr.trouillet.faya.fayabank.config.Constants;
 import fr.trouillet.faya.fayabank.domain.Authority;
 import fr.trouillet.faya.fayabank.domain.User;
 import fr.trouillet.faya.fayabank.repository.AuthorityRepository;
-import fr.trouillet.faya.fayabank.config.Constants;
 import fr.trouillet.faya.fayabank.repository.UserRepository;
 import fr.trouillet.faya.fayabank.security.AuthoritiesConstants;
 import fr.trouillet.faya.fayabank.security.SecurityUtils;
-import fr.trouillet.faya.fayabank.service.util.RandomUtil;
 import fr.trouillet.faya.fayabank.service.dto.UserDTO;
-
+import fr.trouillet.faya.fayabank.service.util.RandomUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -35,7 +34,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
-import java.util.*;
 import java.util.stream.Collectors;
 
 /**

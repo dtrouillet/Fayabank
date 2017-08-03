@@ -13,8 +13,8 @@
 
 package fr.trouillet.faya.fayabank.web.rest;
 
-import io.github.jhipster.config.JHipsterProperties;
 import fr.trouillet.faya.fayabank.FayabankApp;
+import io.github.jhipster.config.JHipsterProperties;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

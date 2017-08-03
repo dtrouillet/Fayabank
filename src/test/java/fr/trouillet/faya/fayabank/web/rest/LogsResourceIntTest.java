@@ -13,10 +13,10 @@
 
 package fr.trouillet.faya.fayabank.web.rest;
 
-import fr.trouillet.faya.fayabank.FayabankApp;
-import fr.trouillet.faya.fayabank.web.rest.vm.LoggerVM;
 import ch.qos.logback.classic.AsyncAppender;
 import ch.qos.logback.classic.LoggerContext;
+import fr.trouillet.faya.fayabank.FayabankApp;
+import fr.trouillet.faya.fayabank.web.rest.vm.LoggerVM;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

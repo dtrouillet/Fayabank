@@ -14,8 +14,8 @@
 package fr.trouillet.faya.fayabank.web.rest.vm;
 
 import fr.trouillet.faya.fayabank.service.dto.UserDTO;
-import javax.validation.constraints.Size;
 
+import javax.validation.constraints.Size;
 import java.time.Instant;
 import java.util.Set;
 

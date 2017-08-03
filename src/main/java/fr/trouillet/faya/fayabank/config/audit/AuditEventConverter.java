@@ -14,12 +14,9 @@
 package fr.trouillet.faya.fayabank.config.audit;
 
 import fr.trouillet.faya.fayabank.domain.PersistentAuditEvent;
-
 import org.springframework.boot.actuate.audit.AuditEvent;
 import org.springframework.security.web.authentication.WebAuthenticationDetails;
 import org.springframework.stereotype.Component;
-
-import java.util.*;
 
 @Component
 public class AuditEventConverter {

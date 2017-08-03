@@ -13,20 +13,19 @@
 
 package fr.trouillet.faya.fayabank.web.rest;
 
-import fr.trouillet.faya.fayabank.config.Constants;
 import com.codahale.metrics.annotation.Timed;
+import fr.trouillet.faya.fayabank.config.Constants;
 import fr.trouillet.faya.fayabank.domain.User;
 import fr.trouillet.faya.fayabank.repository.UserRepository;
 import fr.trouillet.faya.fayabank.security.AuthoritiesConstants;
 import fr.trouillet.faya.fayabank.service.MailService;
 import fr.trouillet.faya.fayabank.service.UserService;
 import fr.trouillet.faya.fayabank.service.dto.UserDTO;
-import fr.trouillet.faya.fayabank.web.rest.vm.ManagedUserVM;
 import fr.trouillet.faya.fayabank.web.rest.util.HeaderUtil;
 import fr.trouillet.faya.fayabank.web.rest.util.PaginationUtil;
+import fr.trouillet.faya.fayabank.web.rest.vm.ManagedUserVM;
 import io.github.jhipster.web.util.ResponseUtil;
 import io.swagger.annotations.ApiParam;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -40,7 +39,6 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.*;
 
 /**
  * REST controller for managing users.

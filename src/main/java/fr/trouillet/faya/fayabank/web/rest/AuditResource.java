@@ -15,7 +15,6 @@ package fr.trouillet.faya.fayabank.web.rest;
 
 import fr.trouillet.faya.fayabank.service.AuditEventService;
 import fr.trouillet.faya.fayabank.web.rest.util.PaginationUtil;
-
 import io.github.jhipster.web.util.ResponseUtil;
 import io.swagger.annotations.ApiParam;
 import org.springframework.boot.actuate.audit.AuditEvent;

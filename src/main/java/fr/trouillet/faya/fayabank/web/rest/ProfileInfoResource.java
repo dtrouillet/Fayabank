@@ -14,9 +14,7 @@
 package fr.trouillet.faya.fayabank.web.rest;
 
 import fr.trouillet.faya.fayabank.config.DefaultProfileUtil;
-
 import io.github.jhipster.config.JHipsterProperties;
-
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.*;
 

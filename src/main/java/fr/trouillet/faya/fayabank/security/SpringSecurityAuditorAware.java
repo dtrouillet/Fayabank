@@ -14,7 +14,6 @@
 package fr.trouillet.faya.fayabank.security;
 
 import fr.trouillet.faya.fayabank.config.Constants;
-
 import org.springframework.data.domain.AuditorAware;
 import org.springframework.stereotype.Component;
 

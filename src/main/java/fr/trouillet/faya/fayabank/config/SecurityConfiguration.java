@@ -15,7 +15,6 @@ package fr.trouillet.faya.fayabank.config;
 
 
 import io.github.jhipster.security.*;
-
 import org.springframework.beans.factory.BeanInitializationException;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

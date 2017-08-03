@@ -14,7 +14,6 @@
 package fr.trouillet.faya.fayabank.repository;
 
 import fr.trouillet.faya.fayabank.domain.Authority;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

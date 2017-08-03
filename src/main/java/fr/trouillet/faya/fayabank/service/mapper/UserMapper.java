@@ -16,10 +16,8 @@ package fr.trouillet.faya.fayabank.service.mapper;
 import fr.trouillet.faya.fayabank.domain.Authority;
 import fr.trouillet.faya.fayabank.domain.User;
 import fr.trouillet.faya.fayabank.service.dto.UserDTO;
-
 import org.springframework.stereotype.Service;
 
-import java.util.*;
 import java.util.stream.Collectors;
 
 /**

@@ -14,17 +14,15 @@
 package fr.trouillet.faya.fayabank.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
-
 import fr.trouillet.faya.fayabank.domain.User;
 import fr.trouillet.faya.fayabank.repository.UserRepository;
 import fr.trouillet.faya.fayabank.security.SecurityUtils;
 import fr.trouillet.faya.fayabank.service.MailService;
 import fr.trouillet.faya.fayabank.service.UserService;
 import fr.trouillet.faya.fayabank.service.dto.UserDTO;
+import fr.trouillet.faya.fayabank.web.rest.util.HeaderUtil;
 import fr.trouillet.faya.fayabank.web.rest.vm.KeyAndPasswordVM;
 import fr.trouillet.faya.fayabank.web.rest.vm.ManagedUserVM;
-import fr.trouillet.faya.fayabank.web.rest.util.HeaderUtil;
-
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,7 +34,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-import java.util.*;
 
 /**
  * REST controller for managing the current user's account.

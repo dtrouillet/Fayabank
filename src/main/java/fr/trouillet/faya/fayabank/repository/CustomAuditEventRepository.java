@@ -16,7 +16,6 @@ package fr.trouillet.faya.fayabank.repository;
 import fr.trouillet.faya.fayabank.config.Constants;
 import fr.trouillet.faya.fayabank.config.audit.AuditEventConverter;
 import fr.trouillet.faya.fayabank.domain.PersistentAuditEvent;
-
 import org.springframework.boot.actuate.audit.AuditEvent;
 import org.springframework.boot.actuate.audit.AuditEventRepository;
 import org.springframework.stereotype.Repository;
