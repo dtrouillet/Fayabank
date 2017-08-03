@@ -1,0 +1,54 @@
+<!--
+  ~ Copyright (c) 2017 dtrouillet
+  ~ All rights reserved.
+  ~
+  ~ Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+  ~
+  ~ * Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+  ~ * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+  ~ * Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+  ~
+  ~ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  -->
+
+<div>
+    <h2 data-translate="audits.title">Audits</h2>
+
+    <div class="row">
+        <div class="col-md-5">
+            <h4 data-translate="audits.filter.title">Filter by date</h4>
+            <p class="input-group">
+                <span class="input-group-addon" data-translate="audits.filter.from">from</span>
+                <input type="date" class="input-sm form-control" name="start" ng-model="vm.fromDate" ng-change="vm.onChangeDate()" required/>
+                <span class="input-group-addon" data-translate="audits.filter.to">to</span>
+                <input type="date" class="input-sm form-control" name="end" ng-model="vm.toDate" ng-change="vm.onChangeDate()" required/>
+            </p>
+        </div>
+    </div>
+
+
+    <table class="table table-condensed table-striped table-bordered table-responsive">
+        <thead>
+        <tr>
+            <th ng-click="predicate = 'timestamp'; reverse=!reverse"><span data-translate="audits.table.header.date">Date</span></th>
+            <th ng-click="predicate = 'principal'; reverse=!reverse"><span data-translate="audits.table.header.principal">User</span></th>
+            <th ng-click="predicate = 'type'; reverse=!reverse"><span data-translate="audits.table.header.status">State</span></th>
+            <th ng-click="predicate = 'data.message'; reverse=!reverse"><span data-translate="audits.table.header.data">Extra data</span></th>
+        </tr>
+        </thead>
+
+        <tr ng-repeat="audit in vm.audits | filter:filter | orderBy:predicate:reverse" ng-hide="audit.filtered">
+            <td><span>{{audit.timestamp| date:'medium'}}</span></td>
+            <td><small>{{audit.principal}}</small></td>
+            <td>{{audit.type}}</td>
+            <td>
+                <span ng-show="audit.data.message">{{audit.data.message}}</span>
+                <span ng-show="audit.data.remoteAddress"><span data-translate="audits.table.data.remoteAddress">Remote Address</span> {{audit.data.remoteAddress}}</span>
+            </td>
+        </tr>
+    </table>
+
+    <div class="text-center">
+        <uib-pagination class="pagination-sm" total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.loadPage(vm.page)"></uib-pagination>
+    </div>
+</div>
