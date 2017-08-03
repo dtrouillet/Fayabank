@@ -1,0 +1,60 @@
+<!--
+  ~ Copyright (c) 2017 dtrouillet
+  ~ All rights reserved.
+  ~
+  ~ Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+  ~
+  ~ * Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+  ~ * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+  ~ * Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+  ~
+  ~ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  -->
+
+<div>
+    <h2 data-translate="configuration.title">Configuration</h2>
+
+    <span data-translate="configuration.filter">Filter (by prefix)</span> <input type="text" ng-model="filter" class="form-control">
+    <label ng-hide="filteredConfig.length === 0">Spring configuration</label>
+    <table class="table table-condensed table-striped table-bordered table-responsive"
+        style="table-layout:fixed" ng-hide="filteredConfig.length === 0">
+        <thead>
+        <tr>
+            <th ng-click="predicate = 'prefix'; reverse=!reverse" class="col-sm-4"><span data-translate="configuration.table.prefix">Prefix</span></th>
+            <th data-translate="configuration.table.properties" class="col-sm-8">Properties</th>
+        </tr>
+        </thead>
+
+        <tr ng-repeat="entry in filtered = (vm.configuration | filter:filter | orderBy:predicate:reverse)">
+            <td><span>{{entry.prefix}}</span></td>
+            <td>
+                <div class="row" ng-repeat="(key, value) in entry.properties">
+                    <div class="col-md-4">{{key}}</div>
+                    <div class="col-md-8">
+                        <span class="pull-right label label-default break">{{value}}</span>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div ng-repeat="(key, value) in vm.allConfiguration">
+        <label ng-hide="filtered.length === 0"><span>{{key}}</span></label>
+        <table class="table table-condensed table-striped table-bordered table-responsive"
+               style="table-layout:fixed" ng-hide="filtered.length === 0">
+            <thead>
+            <tr>
+                <th class="col-sm-4">Property</th>
+                <th class="col-sm-8">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="item in filtered = (value | filter:filter)">
+                <td class="break">{{item.key}}</td>
+                <td class="break">
+                    <span class="pull-right label label-default break">{{item.val}}</span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+<!--
+  ~ Copyright (c) 2017 dtrouillet
+  ~ All rights reserved.
+  ~
+  ~ Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+  ~
+  ~ * Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+  ~ * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+  ~ * Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+  ~
+  ~ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  -->
+
+<div class="table-responsive">
+    <h2 data-translate="logs.title">Logs</h2>
+
+    <p data-translate="logs.nbloggers" translate-values="{total: '{{ vm.loggers.length }}'}">There are {{ vm.loggers.length }} loggers.</p>
+
+    <span data-translate="logs.filter">Filter</span> <input type="text" ng-model="filter" class="form-control">
+
+    <table class="table table-condensed table-striped table-bordered">
+        <thead>
+        <tr title="click to order">
+            <th ng-click="predicate = 'name'; reverse=!reverse"><span data-translate="logs.table.name">Name</span></th>
+            <th ng-click="predicate = 'level'; reverse=!reverse"><span data-translate="logs.table.level">Level</span></th>
+        </tr>
+        </thead>
+
+        <tr ng-repeat="logger in vm.loggers | filter:filter | orderBy:predicate:reverse">
+            <td><small>{{logger.name | characters:140}}</small></td>
+            <td>
+                <button ng-click="vm.changeLevel(logger.name, 'TRACE')" ng-class="(logger.level=='TRACE') ? 'btn-danger' : 'btn-default'" class="btn btn-default btn-xs">TRACE</button>
+                <button ng-click="vm.changeLevel(logger.name, 'DEBUG')" ng-class="(logger.level=='DEBUG') ? 'btn-warning' : 'btn-default'" class="btn btn-default btn-xs">DEBUG</button>
+                <button ng-click="vm.changeLevel(logger.name, 'INFO')" ng-class="(logger.level=='INFO') ? 'btn-info' : 'btn-default'" class="btn btn-default btn-xs">INFO</button>
+                <button ng-click="vm.changeLevel(logger.name, 'WARN')" ng-class="(logger.level=='WARN') ? 'btn-success' : 'btn-default'" class="btn btn-default btn-xs">WARN</button>
+                <button ng-click="vm.changeLevel(logger.name, 'ERROR')" ng-class="(logger.level=='ERROR') ? 'btn-primary' : 'btn-default'" class="btn btn-default btn-xs">ERROR</button>
+            </td>
+        </tr>
+    </table>
+</div>
