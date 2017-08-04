@@ -842,7 +842,7 @@
                                 <goals>
                                     <goal>bower</goal>
                                 </goals>
-                                <phase>compile</phase>
+                                <phase>test</phase>
                                 <configuration>
                                     <arguments>install --no-color</arguments>
                                 </configuration>
