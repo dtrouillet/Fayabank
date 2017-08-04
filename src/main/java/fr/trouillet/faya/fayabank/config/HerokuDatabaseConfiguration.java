@@ -16,6 +16,7 @@ package fr.trouillet.faya.fayabank.config;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
+import io.github.jhipster.config.JHipsterConstants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.bind.RelaxedPropertyResolver;
@@ -31,6 +32,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 @Configuration
+@Profile(JHipsterConstants.SPRING_PROFILE_PRODUCTION)
 public class HerokuDatabaseConfiguration implements EnvironmentAware {
 
     private final Logger log = LoggerFactory.getLogger(HerokuDatabaseConfiguration.class);
@@ -46,7 +48,6 @@ public class HerokuDatabaseConfiguration implements EnvironmentAware {
     }
 
     @Bean
-    @Profile("prod")
     public DataSource dataSource() {
         log.debug("Configuring Heroku Datasource");
 
