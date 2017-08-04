@@ -23,6 +23,7 @@ import org.springframework.context.ApplicationContextException;
 import org.springframework.context.EnvironmentAware;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.core.env.Environment;
 
 import javax.sql.DataSource;
@@ -45,6 +46,7 @@ public class HerokuDatabaseConfiguration implements EnvironmentAware {
     }
 
     @Bean
+    @Profile("prod")
     public DataSource dataSource() {
         log.debug("Configuring Heroku Datasource");
 
