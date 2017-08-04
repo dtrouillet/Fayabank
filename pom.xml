@@ -856,6 +856,16 @@
                                 </configuration>
                             </execution>
                             <execution>
+                                <id>bower install for test</id>
+                                <goals>
+                                    <goal>bower</goal>
+                                </goals>
+                                <phase>test</phase>
+                                <configuration>
+                                    <arguments>install --no-color</arguments>
+                                </configuration>
+                            </execution>
+                            <execution>
                                 <id>gulp test</id>
                                 <goals>
                                     <goal>gulp</goal>
