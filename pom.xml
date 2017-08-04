@@ -722,7 +722,19 @@
                         </lifecycleMappingMetadata>
                     </configuration>
                 </plugin>
+                <plugin>
+                    <groupId>com.heroku.sdk</groupId>
+                    <artifactId>heroku-maven-plugin</artifactId>
+                    <version>1.2.0</version>
+                    <configuration>
+                        <appName>fayabank</appName>
+                        <processType>
+                            <web>java -Dserver.port=$PORT -jar target/demo-0.0.1-SNAPSHOT.jar</web>
+                        </processType>
+                    </configuration>
+                </plugin>
             </plugins>
+
         </pluginManagement>
     </build>
     <profiles>
