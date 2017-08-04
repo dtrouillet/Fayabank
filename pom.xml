@@ -702,7 +702,7 @@
                 <artifactId>heroku-maven-plugin</artifactId>
                 <configuration>
                     <processTypes>
-                        <web>java -Dserver.port=$PORT -jar target/${build.finalName}.war --spring.datasource.heroku-url=$DATABASE_URL</web>
+                        <web>java -Dserver.port=$PORT -jar target/${project.build.finalName}.war --spring.datasource.heroku-url=$DATABASE_URL</web>
                     </processTypes>
                 </configuration>
             </plugin>
