@@ -30,6 +30,7 @@ before_install:
   - yarn global add bower gulp-cli
 install:
   - yarn install
+  - bower install
 script:
   - chmod +x mvnw
   - ./mvnw clean test
