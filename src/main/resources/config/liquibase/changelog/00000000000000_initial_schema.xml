@@ -21,6 +21,7 @@
 
     <property name="now" value="now()" dbms="h2"/>
     <property name="now" value="now()" dbms="mysql"/>
+    <property name="now" value="now()" dbms="postgresql"/>
     <property name="autoIncrement" value="true"/>
 
     <!--
