@@ -26,7 +26,7 @@ spring:
         prepStmtCacheSqlLimit: 2048
         useServerPrepStmts: true
     jpa:
-        database-platform: org.hibernate.dialect.PostgreSQL82Dialect
+        database-platform: fr.trouillet.faya.fayabank.config.FixedPostgreSQL82Dialect
         database: POSTGRESQL
         show-sql: false
         properties:
