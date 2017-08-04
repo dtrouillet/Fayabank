@@ -19,12 +19,12 @@ spring:
             enabled: false
         livereload:
             enabled: false
-    datasource:
-        dataSourceClassName: org.postgresql.ds.PGSimpleDataSource
-        cachePrepStmts: true
-        prepStmtCacheSize: 250
-        prepStmtCacheSqlLimit: 2048
-        useServerPrepStmts: true
+#    datasource:
+#        dataSourceClassName: org.postgresql.ds.PGSimpleDataSource
+#        cachePrepStmts: true
+#        prepStmtCacheSize: 250
+#        prepStmtCacheSqlLimit: 2048
+#        useServerPrepStmts: true
     jpa:
         database-platform: fr.trouillet.faya.fayabank.config.FixedPostgreSQL82Dialect
         database: POSTGRESQL
